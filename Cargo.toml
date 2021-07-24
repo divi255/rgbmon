@@ -1,0 +1,26 @@
+[package]
+name = "rgbmon"
+version = "0.0.1"
+authors = ["Sergei S. <div@altertech.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cpu-monitor = "0.1.1"
+colored = "2"
+clap = "3.0.0-beta.2"
+signal-hook = "0.3.9"
+lazy_static = "1.4.0"
+daemonize = "0.4.1"
+chrono = "0.4.19"
+log = "0.4.13"
+syslog = "5.0.0"
+
+[lib]
+name = "rgbmon"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rgbmon"
+path = "src/rgbmon.rs"
