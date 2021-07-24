@@ -33,7 +33,7 @@ Run in background for production:
 rgbmon -D <options>
 ```
 
-Set the default color for CPU load < 20%:
+Set the default color for CPU load <= 20%:
 ```
 rgbmon --default-color 20:99CCFF
 ```
