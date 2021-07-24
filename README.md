@@ -49,7 +49,7 @@ rgbmon --device-types 0,1
 
 Suspend LED management and turn them off.
 
-Note: if used before system sleep, it's recommended to wait at least 0.5
+Note: if used during system sleep, it's recommended to wait at least 0.5
 seconds after the command, to make sure LEDs are turned off:
 ```
 kill -USR1 $(cat /var/run/rgbmon.pid)
