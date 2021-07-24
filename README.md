@@ -59,7 +59,7 @@ kill -USR1 $(cat /var/run/rgbmon.pid)
 Resume LED management, reload controllers from the server and forcibly
 instantly set the color:
 ```
-kill -USR1 $(cat /var/run/rgbmon.pid)
+kill -HUP $(cat /var/run/rgbmon.pid)
 ```
 
 ## Limitations
