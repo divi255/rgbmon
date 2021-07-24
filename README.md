@@ -55,5 +55,5 @@ kill -USR1 $(cat /var/run/rgbmon.pid)
 
 * Supports only device types, zones and individual LEDs are not supported
 * Changes colors only, keeping modes untouched
-* *src/lib.rs* contains very basic client for OpenRGB SDK v2. If someone want
+* *src/lib.rs* contains a very basic client for OpenRGB SDK v2. If someone want
   to improve it to the fully functional client library crate - go on.
