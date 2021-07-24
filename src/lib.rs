@@ -58,7 +58,7 @@ impl RGBColor {
     }
 
     pub fn colorize_self(&self) -> colored::ColoredString {
-        self.colorize(&self)
+        self.colorize(self)
     }
 
     pub fn from_str(s: &str) -> Self {
