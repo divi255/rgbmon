@@ -20,7 +20,7 @@ const HEADER: [u8; 4] = [b'O', b'R', b'G', b'B'];
 const ERR_CONTROLLER_NOT_FOUND: &str = "controller not found";
 
 const CLIENT_NAME: &str = "rgbmon";
-pub const VERSION: &str = "0.0.1";
+pub const VERSION: &str = "0.0.2";
 
 #[derive(PartialEq, Copy, Clone)]
 pub struct RGBColor {
