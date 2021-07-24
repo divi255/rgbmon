@@ -52,7 +52,8 @@ Suspend LED management and turn them off:
 kill -USR1 $(cat /var/run/rgbmon.pid)
 ```
 
-Resume LED management and forcibly instantly set the color:
+Resume LED management, reload controllers from the server and forcibly
+instantly set the color:
 ```
 kill -USR1 $(cat /var/run/rgbmon.pid)
 ```
