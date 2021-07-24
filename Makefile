@@ -22,4 +22,4 @@ pkg:
 	mkdir -p _build
 	cd target/x86_64-unknown-linux-musl/release && tar czvf ../../../_build/rgbmon-${VERSION}-x86_64-musl.tar.gz rgbmon
 	cd _build && echo "" | gh release create v$(VERSION) -t "v$(VERSION)" \
-		  rgbmon-${VERSION}-x86_64-musleabihf.tar.gz
+		  rgbmon-${VERSION}-x86_64-musl.tar.gz
