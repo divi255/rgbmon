@@ -385,8 +385,7 @@ impl OpenRGBClient {
                     i,
                     REQ_REQUEST_CONTROLLER_DATA,
                     &PROTOCOL_VERSION.to_le_bytes(),
-                )
-                .unwrap();
+                )?;
             let c = ControllerData::unpack(i, &data.unwrap())?;
             debug!("controller loaded: {:?}", c);
             self.controllers.push(c);
