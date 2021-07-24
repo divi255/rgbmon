@@ -5,18 +5,17 @@ Requires [OpenRGB](https://openrgb.org) server.
 Monitors CPU load and changes desired LEDs according to the color circle, from
 dark violet to red.
 
-## Build from source
-
-(requires Rust)
-
-```
-cargo build --release
-```
-
 ## Download binary
 
 The pre-built binary is available for Linux x86\_64 on [releases
 page](https://github.com/divi255/rgbmon/releases).
+
+## Build from source
+
+(requires Rust)
+```
+cargo build --release
+```
 
 ## Usage
 
