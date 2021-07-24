@@ -22,7 +22,6 @@ const ERR_CONTROLLER_NOT_FOUND: &str = "controller not found";
 const CLIENT_NAME: &str = "rgbmon";
 pub const VERSION: &str = "0.0.1";
 
-
 #[derive(PartialEq, Copy, Clone)]
 pub struct RGBColor {
     pub red: u8,
@@ -432,7 +431,6 @@ impl OpenRGBClient {
                     controller_id: c.id,
                     end: c.leds.len() as u16,
                 });
-                break;
             }
         }
         check_batch!(to_set);
@@ -444,10 +442,21 @@ impl OpenRGBClient {
         device_types: &Vec<u32>,
         color: &RGBColor,
     ) -> Result<(), io::Error> {
+        let mut found = false;
         for d in device_types {
-            self.set_color_by_device_type(*d, color)?;
+            match self.set_color_by_device_type(*d, color) {
+                Ok(_) => found = true,
+                Err(e) if e.kind() == io::ErrorKind::NotFound => {}
+                Err(e) => return Err(e),
+            }
         }
-        Ok(())
+        match found {
+            true => Ok(()),
+            false => Err(io::Error::new(
+                io::ErrorKind::NotFound,
+                ERR_CONTROLLER_NOT_FOUND,
+            )),
+        }
     }
 
     pub fn set_color_by_device_type(
@@ -462,7 +471,6 @@ impl OpenRGBClient {
                     controller_id: c.id,
                     end: c.leds.len() as u16,
                 });
-                break;
             }
         }
         check_batch!(to_set);
