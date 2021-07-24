@@ -19,7 +19,7 @@ use std::thread;
 use std::time::Duration;
 
 use log::LevelFilter;
-use log::{debug, error, info, Level, Metadata, Record};
+use log::{debug, info, warn, error, Level, Metadata, Record};
 use syslog::{BasicLogger, Facility, Formatter3164};
 
 const COLORS: u32 = 0xFFFFFF;
@@ -225,7 +225,7 @@ fn main() {
         match client.load() {
             Ok(_) => {
                 if client.controllers.is_empty() {
-                    error!("no controllers connected");
+                    warn!("no controllers connected");
                 } else {
                     let mut found = false;
                     for c in &client.controllers {
@@ -235,7 +235,7 @@ fn main() {
                         }
                     }
                     if !found {
-                        error!("no device types to control");
+                        warn!("no device types to control");
                     }
                 }
             }
