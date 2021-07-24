@@ -13,6 +13,11 @@ dark violet to red.
 cargo build --release
 ```
 
+## Download binary
+
+The pre-built binary is available for Linux x86\_64 on [releases
+page](https://github.com/divi255/rgbmon/releases).
+
 ## Usage
 
 ### Running
