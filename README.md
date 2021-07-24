@@ -1,9 +1,11 @@
 # CPU monitor daemon for OpenRGB
 
-Requires [OpenRGB](https://openrgb.org) server.
+Requires [OpenRGB](https://openrgb.org) server running.
 
 Monitors CPU load and changes desired LEDs according to the color circle, from
 dark violet to red.
+
+Written in Rust, fast, tiny and statically linked.
 
 ## Download binary
 
