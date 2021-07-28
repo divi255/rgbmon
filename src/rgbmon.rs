@@ -209,9 +209,10 @@ fn main() {
             }
         }
     }
+    let device_types = std::sync::Arc::new(&opts.device_types);
     debug!(
         "Device types managed: {}",
-        opts.device_types
+        device_types
             .clone()
             .into_iter()
             .map(|i| i.to_string() + " ")
